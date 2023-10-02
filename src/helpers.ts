@@ -1,8 +1,8 @@
-const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
+const capitalize = (str: string): string => str.charAt(0).toUpperCase() + str.slice(1);
 
-const fullName = (firstName: string, lastName: string) => `${capitalize(firstName)} ${capitalize(lastName)}`;
+const fullName = (firstName: string, lastName: string): string => `${capitalize(firstName)} ${capitalize(lastName)}`;
 
-const formatPhone = (rawPhone: string | number | null) => {
+const formatPhone = (rawPhone: string | number | null): string => {
   let phone = rawPhone;
   if (typeof phone === 'number') {
     phone = phone.toString();

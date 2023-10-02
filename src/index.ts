@@ -24,11 +24,11 @@ interface TransformedCustomerInfo {
   city: string;
 }
 
-const data = rawData.map((item: CustomerInfo): TransformedCustomerInfo => {
+const transformedData = rawData.map((customer: CustomerInfo): TransformedCustomerInfo => {
   const {
     // eslint-disable-next-line @typescript-eslint/naming-convention
     first_name, last_name, phone, make, model, city, lastpayment, purchased,
-  } = item;
+  } = customer;
 
   return {
     name: fullName(first_name, last_name),
@@ -40,7 +40,7 @@ const data = rawData.map((item: CustomerInfo): TransformedCustomerInfo => {
   };
 });
 
-data.forEach((el: TransformedCustomerInfo) => {
+transformedData.forEach((customer: TransformedCustomerInfo) => {
   // eslint-disable-next-line no-console
-  console.log(`\n${el.name}\n${el.vehicle}\nPurchased: ${el.purchased}\nLast Payment: ${el.lastPayment}\nPhone: ${el.phone}\nCity: ${el.city}`);
+  console.log(`\n${customer.name}\n${customer.vehicle}\nPurchased: ${customer.purchased}\nLast Payment: ${customer.lastPayment}\nPhone: ${customer.phone}\nCity: ${customer.city}`);
 });
