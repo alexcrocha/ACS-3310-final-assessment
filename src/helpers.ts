@@ -16,4 +16,4 @@ const formatPhone = (rawPhone: string | number | null) => {
   return `(${area}) ${three}-${four}`;
 };
 
-export default { fullName, formatPhone };
+export default { fullName, formatPhone, capitalize };
